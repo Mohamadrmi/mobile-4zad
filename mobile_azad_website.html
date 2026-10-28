@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="موبایل آزاد؛ فروش موبایل و لوازم جانبی و تعمیرات تخصصی موبایل، ایرپاد و اسپیکر">
+  <title>موبایل آزاد | فروش و تعمیرات موبایل</title>
+  <style>
+    :root {
+      --bg: #050b14;
+      --panel: #091729;
+      --panel2: #0c2038;
+      --blue: #078cff;
+      --blue2: #00c2ff;
+      --text: #f4f8ff;
+      --muted: #b3c2d6;
+      --line: rgba(0, 153, 255, .28);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(ellipse at top right, #09254a 0, var(--bg) 48%);
+      color: var(--text);
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.9;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1100px, 92%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(3, 10, 20, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { font-size: 1.35rem; font-weight: 900; white-space: nowrap; }
+    .brand span { color: var(--blue2); }
+    nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+    nav a { color: var(--muted); font-size: .92rem; }
+    nav a:hover { color: var(--blue2); }
+    .hero { padding: 76px 0 64px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 36px; align-items: center; }
+    .eyebrow { color: var(--blue2); font-weight: bold; letter-spacing: .3px; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.35; margin: 10px 0 16px; }
+    h1 span { color: var(--blue); }
+    .hero p { color: var(--muted); max-width: 560px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+    .btn { display: inline-block; padding: 11px 20px; border-radius: 10px; font-weight: bold; transition: .2s; }
+    .btn-primary { background: linear-gradient(120deg, var(--blue), #0064dc); color: white; box-shadow: 0 8px 25px #007bff30; }
+    .btn-outline { border: 1px solid var(--blue); color: #d8efff; }
+    .btn:hover { transform: translateY(-2px); }
+    .hero-art {
+      min-height: 300px; border: 1px solid var(--line); border-radius: 28px;
+      background: radial-gradient(circle at 50% 25%, #0c4a85 0, #071a30 43%, #030a13 78%);
+      display: flex; align-items: center; justify-content: center; position: relative;
+      box-shadow: inset 0 0 50px #008cff17, 0 20px 55px #0006;
+    }
+    .device-row { display: flex; align-items: end; gap: 13px; transform: rotate(-4deg); }
+    .phone { width: 92px; height: 190px; border: 4px solid #65778e; border-radius: 19px; background: linear-gradient(145deg, #182d49, #06101f 50%, #0879d9); box-shadow: 0 18px 25px #0008; position: relative; }
+    .phone:before { content: ""; position: absolute; top: 7px; left: 50%; transform: translateX(-50%); width: 35px; height: 8px; border-radius: 9px; background: #02060c; }
+    .phone.tall { height: 220px; background: linear-gradient(145deg, #253a54, #07101e 45%, #00a7ff); }
+    .earbuds { width: 105px; height: 72px; border-radius: 25px 25px 20px 20px; background: linear-gradient(145deg, #fff, #a9c0d8); position: relative; box-shadow: 0 16px 25px #0008; }
+    .earbuds:before, .earbuds:after { content: ""; position: absolute; width: 15px; height: 38px; background: #f5faff; border-radius: 12px; top: -22px; }
+    .earbuds:before { left: 28px; } .earbuds:after { right: 28px; }
+    .features { border-block: 1px solid var(--line); background: #061323a8; }
+    .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 22px 0; }
+    .feature { text-align: center; padding: 4px 10px; }
+    .feature strong { display: block; color: #fff; }
+    .feature span { color: var(--muted); font-size: .83rem; }
+    section { padding: 60px 0; }
+    .section-title { text-align: center; margin: 0 0 30px; font-size: 1.8rem; }
+    .section-title:after { content: ""; display: block; width: 68px; height: 3px; background: var(--blue); margin: 9px auto 0; border-radius: 3px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { padding: 25px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(145deg, #0b1d32, #06101e); transition: .2s; }
+    .card:hover { transform: translateY(-5px); border-color: var(--blue); }
+    .icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 14px; background: #078cff1c; border: 1px solid #078cff55; font-size: 1.65rem; margin-bottom: 12px; }
+    .card h3 { margin: 4px 0 8px; }
+    .card p { color: var(--muted); font-size: .92rem; margin: 0 0 15px; }
+    .small-link { color: var(--blue2); font-weight: bold; }
+    .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: center; }
+    .about-art { min-height: 220px; border-radius: 18px; border: 1px solid var(--line); background: radial-gradient(circle at 50%, #0b5da0, #07192c 60%, #030912); display: grid; place-items: center; font-size: 5rem; }
+    .about p { color: var(--muted); }
+    .contact-box { border: 1px solid var(--line); background: linear-gradient(120deg, #0b2038, #06101e); border-radius: 20px; padding: 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .contact-box p { margin: 5px 0; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; background: #030912; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 20px; }
+    footer p, footer a { color: var(--muted); font-size: .9rem; }
+    .copyright { border-top: 1px solid #ffffff12; margin-top: 22px; padding-top: 15px; text-align: center; color: #7e91a8; font-size: .8rem; }
+    @media (max-width: 760px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 14px; }
+      .hero { padding: 45px 0; }
+      .hero-grid, .about { grid-template-columns: 1fr; }
+      .hero-art { min-height: 250px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .cards { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .phone { width: 72px; height: 160px; }
+      .phone.tall { height: 185px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">موبایل <span>آزاد</span> ▯</a>
+      <nav aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#contact">تماس با ما</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">همراه مطمئن دنیای دیجیتال شما</div>
+          <h1>به <span>موبایل آزاد</span><br>خوش آمدید</h1>
+          <p>فروش لوازم جانبی موبایل و ارائه خدمات تعمیرات تخصصی موبایل، ایرپاد و اسپیکر؛ با دقت، کیفیت و پشتیبانی مناسب.</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#services">مشاهده خدمات ←</a>
+            <a class="btn btn-outline" href="tel:09004553534">تماس با ما</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="تصویر گرافیکی موبایل و لوازم دیجیتال">
+          <div class="device-row">
+            <div class="phone"></div>
+            <div class="phone tall"></div>
+            <div class="earbuds"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="features">
+      <div class="container feature-grid">
+        <div class="feature">🛡️<strong>تضمین کیفیت</strong><span>توجه به کیفیت کالا و خدمات</span></div>
+        <div class="feature">🔧<strong>تعمیرات تخصصی</strong><span>عیب‌یابی و تعمیر دقیق</span></div>
+        <div class="feature">🎧<strong>تعمیر ایرپاد و اسپیکر</strong><span>خدمات برای مدل‌های مختلف</span></div>
+        <div class="feature">🤝<strong>پشتیبانی دوستانه</strong><span>پاسخ‌گویی به مشتریان</span></div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">خدمات ما</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📱</div>
+            <h3>تعمیرات موبایل</h3>
+            <p>عیب‌یابی گوشی، تعویض قطعات و تعمیر برد با بررسی دقیق دستگاه.</p>
+            <a class="small-link" href="#contact">درخواست اطلاعات ←</a>
+          </article>
+          <article class="card">
+            <div class="icon">🎧</div>
+            <h3>تعمیر ایرپاد و هدفون</h3>
+            <p>بررسی و تعمیر ایرپادهای اصل و کپی و انواع هدفون و هندزفری.</p>
+            <a class="small-link" href="#contact">درخواست اطلاعات ←</a>
+          </article>
+          <article class="card">
+            <div class="icon">🔊</div>
+            <h3>تعمیر اسپیکر</h3>
+            <p>خدمات تعمیر اسپیکرهای قابل‌حمل و پارتی‌باکس با بررسی مشکل دستگاه.</p>
+            <a class="small-link" href="#contact">درخواست اطلاعات ←</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <h2 class="section-title">محصولات</h2>
+        <div class="cards">
+          <article class="card"><div class="icon">🔌</div><h3>شارژر و کابل</h3><p>انواع شارژر، کابل و لوازم موردنیاز موبایل.</p></article>
+          <article class="card"><div class="icon">🎵</div><h3>ایرپاد و هدفون</h3><p>مدل‌های مختلف لوازم صوتی برای استفاده روزمره.</p></article>
+          <article class="card"><div class="icon">⌚</div><h3>ساعت هوشمند</h3><p>لوازم دیجیتال و جانبی برای سبک زندگی هوشمند.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about">
+        <div class="about-art" aria-hidden="true">📱</div>
+        <div>
+          <div class="eyebrow">درباره فروشگاه</div>
+          <h2>موبایل آزاد؛ همراه شما</h2>
+          <p>در موبایل آزاد تلاش می‌کنیم خرید لوازم جانبی و دریافت خدمات تعمیرات برای شما ساده و مطمئن باشد. برای اطلاع از موجودی کالا، هزینه تعمیر و جزئیات خدمات، با ما تماس بگیرید.</p>
+          <a class="btn btn-primary" href="#contact">ارتباط با موبایل آزاد</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div>
+            <h2>سوالی دارید؟ با ما در تماس باشید</h2>
+            <p>📞 شماره تماس: 09004553534</p>
+            <p>📍 آدرس: جنب کتابخانه</p>
+            <p>🕒 ساعت کاری: صبح ۸ تا ۱۲ | عصر ۱۷ تا ۲۱</p>
+            <p>📷 اینستاگرام: mobile_4zad</p>
+          </div>
+          <div class="buttons">
+            <a class="btn btn-primary" href="tel:09004553534">تماس تلفنی</a>
+            <a class="btn btn-outline" href="https://instagram.com/mobile_4zad" target="_blank" rel="noopener">صفحه اینستاگرام</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><a class="brand" href="#home">موبایل <span>آزاد</span></a><p>فروش لوازم جانبی و خدمات تعمیرات موبایل</p></div>
+      <div><strong>دسترسی سریع</strong><p><a href="#services">خدمات ما</a></p><p><a href="#products">محصولات</a></p><p><a href="#about">درباره ما</a></p></div>
+      <div><strong>ارتباط با ما</strong><p>09004553534</p><p>mobile_4zad</p><p>جنب کتابخانه</p></div>
+    </div>
+    <div class="container copyright">© تمامی حقوق برای موبایل آزاد محفوظ است.</div>
+  </footer>
+</body>
+</html>
